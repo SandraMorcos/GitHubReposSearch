@@ -19,26 +19,26 @@ enum QueryParams: String {
 
 enum SearchService: TargetType {
     case searchRepositories(keyword: String, pageNumber: Int)
-    
+
     var baseURL: URL {
         guard let url = URL(string: "https://api.github.com/") else {
             fatalError()
         }
         return url
     }
-    
+
     var path: String {
         return "search/repositories"
     }
-    
+
     var method: Alamofire.HTTPMethod {
         return .get
     }
-    
+
     var sampleData: Data {
         return Data()
     }
-    
+
     var task: Task {
         switch self {
         case .searchRepositories(let keyword, let pageNumber):
@@ -48,9 +48,9 @@ enum SearchService: TargetType {
                                       encoding: URLEncoding.default)
         }
     }
-    
+
     var headers: [String : String]? {
         return nil
     }
-    
+
 }

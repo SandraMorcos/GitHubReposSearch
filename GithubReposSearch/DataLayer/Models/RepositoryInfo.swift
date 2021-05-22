@@ -14,7 +14,7 @@ struct RepositoryInfo: Codable {
     let description: String?
     let stargazersCount: Int?
     let language: String?
-    
+
     enum CodingKeys: String, CodingKey {
         case owner
         case name

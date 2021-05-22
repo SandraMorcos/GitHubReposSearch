@@ -13,28 +13,27 @@ class ResultsViewController: UIViewController {
 
     private let disposeBag = DisposeBag()
     var viewModel: ResultsViewModel?
-    
+
     @IBOutlet weak var resultsTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        resultsTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: Bundle.main), forCellReuseIdentifier: RepositoryTableViewCell.reuseIdentifier)
+        resultsTableView.register(UINib(nibName: "RepositoryTableViewCell", bundle: Bundle.main),
+                                  forCellReuseIdentifier: RepositoryTableViewCell.reuseIdentifier)
         resultsTableView.rowHeight = UITableView.automaticDimension
         viewModel?.dataSource
             .bind(to: resultsTableView
                 .rx
                 .items(cellIdentifier: RepositoryTableViewCell.reuseIdentifier,
-                       cellType: RepositoryTableViewCell.self)) { row, repository, cell in
+                       cellType: RepositoryTableViewCell.self)) { _, repository, cell in
                         cell.setup(with: repository)
         }
-        .disposed(by: disposeBag)        
-        
+        .disposed(by: disposeBag)
+
         resultsTableView.rx
             .setDelegate(self)
             .disposed(by: disposeBag)
     }
-    
-    
 
 }
 

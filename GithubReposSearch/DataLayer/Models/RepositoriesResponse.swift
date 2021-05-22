@@ -11,7 +11,7 @@ import Foundation
 struct RepositoriesResponse: Codable {
     let items: [RepositoryInfo]?
     let totalCount: Int?
-    
+
     enum CodingKeys: String, CodingKey {
         case totalCount = "total_count"
         case items

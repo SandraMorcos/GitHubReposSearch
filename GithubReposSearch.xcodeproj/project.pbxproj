@@ -217,11 +217,11 @@
 			buildConfigurationList = A50FAD10265801AD009833BB /* Build configuration list for PBXNativeTarget "GithubReposSearch" */;
 			buildPhases = (
 				DA9256698A941E818F2A4CA1 /* [CP] Check Pods Manifest.lock */,
+				A5ADE09F265910B5002D1B33 /* SwiftLint */,
 				A50FACED265801AC009833BB /* Sources */,
 				A50FACEE265801AC009833BB /* Frameworks */,
 				A50FACEF265801AC009833BB /* Resources */,
 				94107FA739E487CAD6E5E5FC /* [CP] Embed Pods Frameworks */,
-				A50FAD2226583989009833BB /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -350,7 +350,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GithubReposSearch/Pods-GithubReposSearch-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A50FAD2226583989009833BB /* ShellScript */ = {
+		A5ADE09F265910B5002D1B33 /* SwiftLint */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,6 +359,7 @@
 			);
 			inputPaths = (
 			);
+			name = SwiftLint;
 			outputFileListPaths = (
 			);
 			outputPaths = (

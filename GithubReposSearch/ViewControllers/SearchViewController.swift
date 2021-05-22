@@ -11,7 +11,7 @@ import UIKit
 class SearchViewController: UIViewController {
 
     var searchController: UISearchController?
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController = UISearchController(searchResultsController: nil)

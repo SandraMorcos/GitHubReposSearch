@@ -20,7 +20,7 @@ class RequestManager {
                                                         responseModel: Response.Type,
                                                         service: Target,
                                                         completion: @escaping (Response?, CustomError?) -> Void) {
-        
+
         let provider = MoyaProvider<Target>()
         provider.request(service) { result in
             switch result {

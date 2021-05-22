@@ -17,14 +17,14 @@ class ResultsViewModel {
     var currentPageNumber = 0
     var shouldLoadMore = true
     private let disposeBag = DisposeBag()
-    
+
     init(repository: ResultsRepository, keyWord: String) {
         dataSource = BehaviorRelay(value: [])
         self.repository = repository
         self.keyWord = keyWord
         fetchResults()
     }
-    
+
     func fetchResults() {
         guard shouldLoadMore else { return }
         repository.fetchResults(keyword: keyWord,
@@ -45,5 +45,3 @@ class ResultsViewModel {
             .disposed(by: disposeBag)
     }
 }
-
-

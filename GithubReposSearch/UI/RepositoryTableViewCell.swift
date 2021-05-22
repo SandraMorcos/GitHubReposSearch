@@ -12,13 +12,13 @@ import Kingfisher
 enum Language: String {
     case python = "Python"
     case javascript = "JavaScript"
-    
+
     var color: UIColor {
         switch self {
         case .python:
-            return .systemBlue //UIColor(red: 56, green: 112, blue: 159, alpha: 1)
+            return .systemBlue
         case .javascript:
-            return .systemYellow//UIColor(red: 238, green: 222, blue: 95, alpha: 1)
+            return .systemYellow
         }
     }
 }
@@ -26,7 +26,7 @@ enum Language: String {
 class RepositoryTableViewCell: UITableViewCell {
 
     static let reuseIdentifier = "RepositoryTableViewCellId"
-    
+
     @IBOutlet weak var userAvatarImageView: UIImageView!
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var repositoryNameLabel: UILabel!
@@ -34,14 +34,13 @@ class RepositoryTableViewCell: UITableViewCell {
     @IBOutlet weak var stargazersCountLabel: UILabel!
     @IBOutlet weak var languageIndicatorView: UIView!
     @IBOutlet weak var languageLabel: UILabel!
-    
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         languageIndicatorView.layer.cornerRadius = languageIndicatorView.frame.height/2
         userAvatarImageView.layer.cornerRadius = 4
     }
-    
+
     func setup(with repository: RepositoryInfo) {
         userNameLabel.text = repository.owner?.login
         if let stringUrl = repository.owner?.avatarURL,
@@ -63,7 +62,7 @@ class RepositoryTableViewCell: UITableViewCell {
         } else {
             languageIndicatorView.backgroundColor = .clear
         }
-        
+
     }
-    
+
 }
