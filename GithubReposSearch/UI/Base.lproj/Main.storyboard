@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="0Zq-eA-cUF">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewControllerId" title="Home" id="BYZ-38-t0r" customClass="SearchViewController" customModule="GithubReposSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dde-3p-Yvd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.066666666666666666" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                        <viewLayoutGuide key="safeArea" id="MNI-lo-kej"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dsB-MU-0oX">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="7OJ-DB-Fts"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1042.0289855072465" y="65.625"/>
+        </scene>
+        <!--Repositories-->
+        <scene sceneID="DjX-zU-x5U">
+            <objects>
+                <viewController storyboardIdentifier="ResultsViewControllerId" title="Repositories" id="Mio-0P-98P" customClass="ResultsViewController" customModule="GithubReposSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="McO-8U-CiN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gXD-jK-pmt">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.050980392156862744" green="0.066666666666666666" blue="0.090196078431372548" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="wvp-HO-V1L" firstAttribute="trailing" secondItem="gXD-jK-pmt" secondAttribute="trailing" id="CZJ-8P-ycG"/>
+                            <constraint firstItem="gXD-jK-pmt" firstAttribute="leading" secondItem="wvp-HO-V1L" secondAttribute="leading" id="KFy-Qb-Oub"/>
+                            <constraint firstItem="gXD-jK-pmt" firstAttribute="top" secondItem="wvp-HO-V1L" secondAttribute="top" id="URh-E5-ul7"/>
+                            <constraint firstAttribute="bottom" secondItem="gXD-jK-pmt" secondAttribute="bottom" id="WML-Zj-RV4"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wvp-HO-V1L"/>
+                    </view>
+                    <connections>
+                        <outlet property="resultsTableView" destination="gXD-jK-pmt" id="Qtn-xU-0H2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o7n-aY-V4p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1726" y="66"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="OEp-l3-dCT">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0Zq-eA-cUF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="GC8-5g-A63">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="z4r-Cx-KW8"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MMq-y0-lM0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="65.625"/>
+        </scene>
+    </scenes>
+</document>

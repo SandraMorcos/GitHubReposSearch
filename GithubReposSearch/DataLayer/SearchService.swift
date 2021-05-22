@@ -14,10 +14,11 @@ enum QueryParams: String {
     case keyword = "q"
     case type
     case pageNumber = "page"
+    case users
 }
 
 enum SearchService: TargetType {
-    case searchRepositories(keyword: String, type: String, pageNumber: Int)
+    case searchRepositories(keyword: String, pageNumber: Int)
     
     var baseURL: URL {
         guard let url = URL(string: "https://api.github.com/") else {
@@ -40,9 +41,9 @@ enum SearchService: TargetType {
     
     var task: Task {
         switch self {
-        case .searchRepositories(let keyword, let type, let pageNumber):
+        case .searchRepositories(let keyword, let pageNumber):
             return .requestParameters(parameters: [QueryParams.keyword.rawValue: keyword,
-                                                   QueryParams.type.rawValue: type,
+                                                   QueryParams.type.rawValue: QueryParams.users.rawValue,
                                                    QueryParams.pageNumber.rawValue: pageNumber],
                                       encoding: URLEncoding.default)
         }
@@ -51,6 +52,5 @@ enum SearchService: TargetType {
     var headers: [String : String]? {
         return nil
     }
-    
     
 }

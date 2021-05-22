@@ -8,6 +8,7 @@ target 'GithubReposSearch' do
   # Pods for GithubReposSearch
   pod 'SwiftLint'
   pod 'RxSwift'
+  pod 'RxCocoa'	
   pod 'Kingfisher', '4.10.1'
   pod 'Moya'
 
